@@ -11,7 +11,7 @@ function Tags() {
     ]
   return (
     <>
-        <div className='mt-10 flex justify-center items-center gap-5 py-3 border-t-1 border-b-1'>
+        <div className='mt-10 flex flex-wrap justify-center items-center gap-5 py-3 border-t-1 border-b-1 max-w-full'>
             {
                 tags.map((tag, tagIdx) => {
                     return (

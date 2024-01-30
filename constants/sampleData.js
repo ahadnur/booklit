@@ -1,4 +1,4 @@
-const review = {
+export const review = {
     "title" : "What is the meaning of life",
     "reviewText": "As Lea Carpenter’s Ilium opens, the unnamed narrator feels not unlike an actor in a play: “I had no sense of what scene would come next, but as each scene evolved, I could start to see the way I would handle it. . . . It never occurred to me that the life you have is only in part the life you choose, because the moment you start to think you know what’s coming next, that’s when lightning strikes, shatters those windows, and rain starts to pool on the floor.”",
     "book": {

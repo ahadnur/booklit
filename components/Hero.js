@@ -1,5 +1,6 @@
 import React from "react";
 import Tags from "./Tags";
+import Search from "./Search";
 
 function Hero() {
   return (
@@ -13,6 +14,7 @@ function Hero() {
       </div>
       <div className="text-center">
         <Tags />
+        <Search />
       </div>
     </>
   );

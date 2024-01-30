@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
-import Post from "@/components/Post";
+import reviewData from '@/constants/testData.js'
 
 import bookImg from "@/assets/ilium.jpg";
+import Post from "@/components/Post";
 
 export default function Home() {
   return (
@@ -11,14 +12,26 @@ export default function Home() {
       </section>
       {/* All Reviews */}
       <main className="w-full md:max-w-[46.875rem] lg:max-w-[68.75rem] mx-auto mt-10 flex gap-5">
-        <div className="left w-[65%] space-y-8">
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+        {/* <Posts /> */}
+        <div className="left md:w-[65%] space-y-8 px-5 md:px-0">
+          {reviewData.map((post, postIdx) => {
+            return (
+              <Post
+                key={postIdx}
+                position={postIdx + 1}
+                title={post.title}
+                author={post.author}
+                reviewData={post.reviewData}
+                tags={post.tags}
+                postId={post.id}
+              />
+            );
+          })}
         </div>
-        <div className="right w-[35%] px-3">
-          <div className="w-full bg-blue-600 h-[300px] p-8 text-white">
+
+        {/* Recent Reviews */}
+        <div className="right w-[35%] h-auto px-3 hidden md:block">
+          <div className="w-full bg-blue-600 p-8 text-white">
             <h4 className="text-2xl mb-3">Discover your next great book!</h4>
             <p className="text-gray-200">
               BookPage highlights the best new books across all genres, as
@@ -30,7 +43,9 @@ export default function Home() {
 
           {/* Recent Reviews */}
           <div className="reviews mt-5">
-            <h2 className="text-4xl font-bold border-b-1 pb-3">Recent Reviews</h2>
+            <h2 className="text-4xl font-bold border-b-1 pb-3">
+              Recent Reviews
+            </h2>
 
             {/* Recent Review 1 */}
             <div className="flex justify-start items-center py-5 gap-3 border-b-1">
@@ -52,7 +67,9 @@ export default function Home() {
                   <span className="text-sm">Bruce Tiemey</span>
                 </div>
                 <div className="link">
-                <a href="#" className="text-xs">Read More &#8594;</a>
+                  <a href="#" className="text-xs">
+                    Read More &#8594;
+                  </a>
                 </div>
               </div>
             </div>
@@ -77,7 +94,9 @@ export default function Home() {
                   <span className="text-sm">Bruce Tiemey</span>
                 </div>
                 <div className="link">
-                <a href="#" className="text-xs">Read More &#8594;</a>
+                  <a href="#" className="text-xs">
+                    Read More &#8594;
+                  </a>
                 </div>
               </div>
             </div>
